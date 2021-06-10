@@ -1,9 +1,23 @@
 
-public class Questao04 {
+import javax.swing.JOptionPane;
+
+public class PalavraDeAcesso extends JOptionPane {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-	}
+				String acesso = JOptionPane.showInputDialog("Digite a palavra de acesso");
+				
+				if(acesso.equals("Java-2021"))
+				{
+					JOptionPane.showMessageDialog(null, "Permissão Aprovada!");
+				}
+				else 
+				{
+				for (int tentativas=5; tentativas >=1; tentativas--) {
+						JOptionPane.showInputDialog("Tente novamente. Você tem " +tentativas+ " tentativas");
+					}
+				}
 
-}
+			}
+
+		}
