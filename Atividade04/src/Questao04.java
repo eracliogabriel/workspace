@@ -1,7 +1,7 @@
 
 import javax.swing.JOptionPane;
 
-public class PalavraDeAcesso extends JOptionPane {
+public class Questao04 extends JOptionPane {
 
 	public static void main(String[] args) {
 
@@ -9,12 +9,12 @@ public class PalavraDeAcesso extends JOptionPane {
 				
 				if(acesso.equals("Java-2021"))
 				{
-					JOptionPane.showMessageDialog(null, "PermissÃ£o Aprovada!");
+					JOptionPane.showMessageDialog(null, "Permissão: Aprovada");
 				}
 				else 
 				{
 				for (int tentativas=5; tentativas >=1; tentativas--) {
-						JOptionPane.showInputDialog("Tente novamente. VocÃª tem " +tentativas+ " tentativas");
+						JOptionPane.showInputDialog("Tente novamente. Você tem: " +tentativas+ " tentativas");
 					}
 				}
 
