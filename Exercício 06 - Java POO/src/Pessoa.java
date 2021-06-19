@@ -1,24 +1,42 @@
-import javax.swing.JOptionPane;
+import java.time.LocalDate;
+
+//import javax.swing.JOptionPane;
 
 public class Pessoa {
 	private String nome = "Gabriel";
-	private String dtNascimento = "18-08-1996";
 	private String altura = "1.75m";
-	String dados = ("\nNome: " +nome + "\nData de Nascimento: "+dtNascimento + "\nAltura: " +altura);
+	private String dtNascimento = "18/08/1996";
+	String dados = ("\nNome: " +getNome() + "\nData de Nascimento: "+getDtNascimento()  + "\nAltura: " +getAltura());
 
-
-	public String getDados() {
+	LocalDate atual = LocalDate.now();
+		
+	public String dados() {
 		return dados;
 	}
-	public void setDados(String dados) {
-		this.dados = dados;
+	public String getAltura() {
+		return altura;
+	}
+	public void setAltura(String altura) {
+		this.altura = altura;
+	}
+	public String getDtNascimento() {
+		return dtNascimento;
+	}
+	public void setDtNascimento(String dtNascimento) {
+		this.dtNascimento = dtNascimento;
+	}
+	public String getNome() {
+		return nome;
 	}
 
-	public static void main(String[] args) {
+	public void setNome(String nome) {
+		this.nome = nome;
+	}	
 
-		Pessoa myObj = new Pessoa();
-		JOptionPane.showMessageDialog(null, "*** DADOS PESSOAIS ***" + myObj.dados);
-	
-	 }
+//	public static void main(String[] args) {
+//
+//		Pessoa myObj = new Pessoa();
+//		JOptionPane.showMessageDialog(null, "*** DADOS PESSOAIS ***" + myObj.dados());
+//	 }
 
 }
