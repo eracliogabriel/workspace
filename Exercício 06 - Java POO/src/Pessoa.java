@@ -1,15 +1,22 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-//import javax.swing.JOptionPane;
 
 public class Pessoa {
 	private String nome = "Gabriel";
 	private String altura = "1.75m";
-	private String dtNascimento = "18/08/1996";
-	String dados = ("\nNome: " +getNome() + "\nData de Nascimento: "+getDtNascimento()  + "\nAltura: " +getAltura());
-
-	LocalDate atual = LocalDate.now();
-		
+	private LocalDate dtNascimento = LocalDate.of(1996, 8, 18);
+	private String dados = ("\nNome: " +getNome() + "\nData de Nascimento: "+getDataFormatada()  + "\nIdade: " +Idade() + "\nAltura: "+getAltura());
+ 		
+	public int Idade() {
+		LocalDate atual = LocalDate.now();
+		return atual.getYear() - dtNascimento.getYear();	
+	}
+	
+	public String getDataFormatada() {
+		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	    return getDtNascimento().format(formato);
+	}
 	public String dados() {
 		return dados;
 	}
@@ -19,24 +26,17 @@ public class Pessoa {
 	public void setAltura(String altura) {
 		this.altura = altura;
 	}
-	public String getDtNascimento() {
+	public LocalDate getDtNascimento() {
 		return dtNascimento;
 	}
-	public void setDtNascimento(String dtNascimento) {
+	public void setDtNascimento(LocalDate dtNascimento) {
 		this.dtNascimento = dtNascimento;
 	}
 	public String getNome() {
 		return nome;
 	}
-
 	public void setNome(String nome) {
 		this.nome = nome;
 	}	
-
-//	public static void main(String[] args) {
-//
-//		Pessoa myObj = new Pessoa();
-//		JOptionPane.showMessageDialog(null, "*** DADOS PESSOAIS ***" + myObj.dados());
-//	 }
 
 }
