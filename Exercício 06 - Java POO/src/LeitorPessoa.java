@@ -1,6 +1,6 @@
-import javax.swing.JOptionPane;
+  import javax.swing.JOptionPane;
 
-public class Tela {
+public class LeitorPessoa {
 
 	public static void main(String[] args) {
 		
